@@ -22,7 +22,7 @@ fn main() -> Result<()> {
             .with_context(|| format!("Failed requesting {}", current))?;
 
         let status = resp.status();
-        let location = resp.headers().get("Location").cloned();
+        let location = resp.headers().get("Location");
 
         println!("{}: {} -> {}", hop, status, current);
 
